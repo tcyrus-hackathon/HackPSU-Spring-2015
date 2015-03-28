@@ -103,10 +103,10 @@
         $.ajax({
           url: ("http://api.reimaginebanking.com:80/accounts/"+accountid+"/bills?key=CUSTa55383bcc13316a92ddf6a123dd4b446"),
           success: function(results) {
-            for each (bill in results) {
+            $.each(results,function(index,bill) {
               var charge=bill['payment_amount'];
               $('tbody').append("<tr><td>Target</td><td>"+charge+"</td><td>"+(parseInt(charge,10)-1+charge)+"<td></tr>");
-            }
+            });
             console.log(results);
           }
         });
