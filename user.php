@@ -100,11 +100,11 @@
     <script>
     var id = "<?php echo $_POST['account']; ?>";
     $.ajax({
-      url: 'http://api.reimaginebanking.com:80/customers/'+id'/accounts?key=CUSTa55383bcc13316a92ddf6a123dd4b446',
+      url: ('http://api.reimaginebanking.com:80/customers/'+id'/accounts?key=CUSTa55383bcc13316a92ddf6a123dd4b446'),
       success: function(results){
         var accountid=results[0]["_id"];
         $.ajax({
-          url: 'http://api.reimaginebanking.com:80/accounts/'+accountid+'<?php echo $id; ?>/accounts?key=CUSTa55383bcc13316a92ddf6a123dd4b446',
+          url: ('http://api.reimaginebanking.com:80/accounts/'+accountid+'/bills?key=CUSTa55383bcc13316a92ddf6a123dd4b446'),
           success: function(results){
             console.log(results);
           }
