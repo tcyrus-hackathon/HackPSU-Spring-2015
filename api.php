@@ -1,6 +1,8 @@
 <?php
 
 $url='http://api.reimaginebanking.com:80/';
+$C_KEY="CUSTa55383bcc13316a92ddf6a123dd4b446";
+
 
 // Create connection
 if ($db = new SQLiteDatabase('filename')) {
@@ -10,7 +12,6 @@ if ($db = new SQLiteDatabase('filename')) {
 }
 
 function login($id) {
-  $data = array('key1'=>'value1', 'key2' => 'value2');
   $q=@$db->query("INSERT INTO users IF NOT EXISTS (id, last_bill) VALUES('".$id."', '0')");
 }
 
