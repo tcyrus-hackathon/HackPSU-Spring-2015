@@ -64,10 +64,10 @@
      <!-- <caption>Optional table caption.</caption>-->
       <thead>
         <tr>
-          <th>Number of Donations</th>
+          <th>#</th>
           <th>Store</th>
-          <th>Amount Donated </th>
-          <!--<th>Username</th>-->
+          <th>Cost</th>
+          <th>Amount Donated</th>
         </tr>
       </thead>
       <tbody>
@@ -75,19 +75,19 @@
           <th scope="row">1</th>
           <td>Target</td>
           <td>$0.56</td>
-
+          <td>$0.44</td>
         </tr>
         <tr>
           <th scope="row">2</th>
           <td>Best Buy</td>
           <td>$0.12</td>
-
+          <td>$0.88</td>
         </tr>
         <tr>
           <th scope="row">3</th>
           <td>Amazon</td>
           <td>$0.05</td>
-
+          <td>$0.95</td>
         </tr>
       </tbody>
     </table>
@@ -108,5 +108,20 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="ie10-viewport-bug-workaround.js"></script>
+    <script>
+    var id = "<?php echo $_POST['user']; ?>";
+    $.ajax({
+      url: 'http://api.reimaginebanking.com:80/customers/'+id'/accounts?key=CUSTa55383bcc13316a92ddf6a123dd4b446',
+      success: function(results){
+        var accountid=results[0]["_id"];
+        $.ajax({
+          url: 'http://api.reimaginebanking.com:80/accounts/'+accountid+'<?php echo $id; ?>/accounts?key=CUSTa55383bcc13316a92ddf6a123dd4b446',
+          success: function(results){
+            console.log(results);
+          }
+        });
+      }
+    });
+    </script>
   </body>
 </html>
