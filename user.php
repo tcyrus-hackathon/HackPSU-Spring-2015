@@ -109,7 +109,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="ie10-viewport-bug-workaround.js"></script>
     <script>
-    var id = "<?php echo $_POST['user']; ?>";
+    var id = "<?php echo $_POST['account']; ?>";
     $.ajax({
       url: 'http://api.reimaginebanking.com:80/customers/'+id'/accounts?key=CUSTa55383bcc13316a92ddf6a123dd4b446',
       success: function(results){
