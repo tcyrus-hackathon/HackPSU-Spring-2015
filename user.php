@@ -49,37 +49,33 @@
       <!-- Example row of columns -->
 	  <h1 align="center">Donations</h1>
       <div class="row">
-<table class="table">
-     <!-- <caption>Optional table caption.</caption>-->
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Store</th>
-          <th>Cost</th>
-          <th>Amount Donated</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Target</td>
-          <td>$0.56</td>
-          <td>$0.44</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Best Buy</td>
-          <td>$0.12</td>
-          <td>$0.88</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Amazon</td>
-          <td>$0.05</td>
-          <td>$0.95</td>
-        </tr>
-      </tbody>
-    </table>
+        <table class="table">
+          <!-- <caption>Optional table caption.</caption>-->
+          <thead>
+            <tr>
+              <th>Store</th>
+              <th>Cost</th>
+              <th>Amount Donated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--<tr>
+              <td>Target</td>
+              <td>$0.56</td>
+              <td>$0.44</td>
+            </tr>
+            <tr>
+              <td>Best Buy</td>
+              <td>$0.12</td>
+              <td>$0.88</td>
+            </tr>
+            <tr>
+              <td>Amazon</td>
+              <td>$0.05</td>
+              <td>$0.95</td>
+            </tr>-->
+          </tbody>
+      </table>
       </div>
 
       <hr>
@@ -106,12 +102,20 @@
         console.log(accountid);
         $.ajax({
           url: ("http://api.reimaginebanking.com:80/accounts/"+accountid+"/bills?key=CUSTa55383bcc13316a92ddf6a123dd4b446"),
-          success: function(results){
+          success: function(results) {
+            for each (bill in results) {
+              var charge=bill['payment_amount'];
+              $('tbody').append("<tr><td>Target</td><td>"+charge+"</td><td>"+(parseInt(charge,10)-1+charge)+"<td></tr>");
+            }
             console.log(results);
           }
         });
       }
     });
+
+    function charge() {
+
+    }
     </script>
   </body>
 </html>
