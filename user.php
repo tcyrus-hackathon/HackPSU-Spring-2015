@@ -93,7 +93,7 @@
             $.each(results,function(index,bill) {
               var charge=bill['payment_amount'].toFixed(2);
               var use=uses[Math.floor(Math.random()*uses.length)];
-              $('tbody').append("<tr><td>"+use+"</td><td>"+charge+"</td><td>"+(Math.ceil(charge)-charge)+"<td></tr>");
+              $('tbody').append("<tr><td>"+use+"</td><td>"+charge+"</td><td>"+(Math.ceil(charge)-charge).toFixed(2)+"<td></tr>");
             });
           }
         });
