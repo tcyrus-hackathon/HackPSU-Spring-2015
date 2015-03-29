@@ -61,7 +61,7 @@
           <tbody></tbody>
       </table>
 
-      <button type="button" class="btn btn-success">Donate</button>
+      <a type="button" class="btn btn-success">Donate</a>
 
       </div>
 
