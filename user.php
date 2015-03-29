@@ -86,7 +86,6 @@
       url: ("http://api.reimaginebanking.com:80/customers/"+id+"/accounts?key=CUSTa55383bcc13316a92ddf6a123dd4b446"),
       success: function(results){
         var accountid=results[0]["_id"];
-        console.log(accountid);
         var uses=['Target','Best Buy','Amazon','Ebay','Walmart','Old Navy','McDonalds','Giant Grocery','Mclanahans','Student Book Store','Hub Dining'];
         $.ajax({
           url: ("http://api.reimaginebanking.com:80/accounts/"+accountid+"/bills?key=CUSTa55383bcc13316a92ddf6a123dd4b446"),
@@ -96,7 +95,6 @@
               var use=uses[Math.floor(Math.random()*uses.length)];
               $('tbody').append("<tr><td>"+use+"</td><td>"+charge+"</td><td>"+(parseInt(charge,10)-1+charge)+"<td></tr>");
             });
-            console.log(results);
           }
         });
       }
@@ -107,8 +105,14 @@
       $.each(arr,function(index,bill) {
         var charge=bill.children()[2];
         $.ajax({
-          url: ("http://api.reimaginebanking.com:80/accounts/"+accountid+"/transactions?key=CUSTa55383bcc13316a92ddf6a123dd4b446"),
+          url: ("http://api.reimaginebanking.com:80/accounts/"+accountid+"/transactions?key=CUSTa55383bcc13316a92ddf6a123dd4b446",
+          {
+            "transaction type": "cash",
+            "payee id": "5516c07ba520e0066c9ac550",
+            "amount": 1
+          }),
           success: function(results) {
+            console.log(results);
           }
         });
         bill.detach();
