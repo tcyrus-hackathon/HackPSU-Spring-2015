@@ -107,9 +107,9 @@
         $.ajax({
           url: ("http://api.reimaginebanking.com:80/accounts/"+accountid+"/transactions?key=CUSTa55383bcc13316a92ddf6a123dd4b446"),
           success: function(results) {
-            bill.detach();
           }
         });
+        bill.detach();
       });
       this.detach();
     });
