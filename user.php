@@ -91,9 +91,9 @@
           url: ("http://api.reimaginebanking.com:80/accounts/"+accountid+"/bills?key=CUSTa55383bcc13316a92ddf6a123dd4b446"),
           success: function(results) {
             $.each(results,function(index,bill) {
-              var charge=bill['payment_amount'];
+              var charge=bill['payment_amount'].toFixed(2);
               var use=uses[Math.floor(Math.random()*uses.length)];
-              $('tbody').append("<tr><td>"+use+"</td><td>"+charge+"</td><td>"+(parseInt(charge,10)-1+charge)+"<td></tr>");
+              $('tbody').append("<tr><td>"+use+"</td><td>"+charge+"</td><td>"+(Math.ceil(charge)-charge)+"<td></tr>");
             });
           }
         });
