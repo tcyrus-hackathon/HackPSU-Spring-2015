@@ -40,7 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">HACKPSU Microfinance</a>
+          <a class="navbar-brand" href="index.html">HACKPSU Microfinance</a>
         </div>
       </div>
     </nav>
@@ -55,27 +55,14 @@
             <tr>
               <th>Store</th>
               <th>Cost</th>
-              <th>Amount Donated</th>
+              <th>Recommended Donation Amount</th>
             </tr>
           </thead>
-          <tbody>
-            <!--<tr>
-              <td>Target</td>
-              <td>$0.56</td>
-              <td>$0.44</td>
-            </tr>
-            <tr>
-              <td>Best Buy</td>
-              <td>$0.12</td>
-              <td>$0.88</td>
-            </tr>
-            <tr>
-              <td>Amazon</td>
-              <td>$0.05</td>
-              <td>$0.95</td>
-            </tr>-->
-          </tbody>
+          <tbody></tbody>
       </table>
+
+      <button type="button" class="btn btn-success"></button>
+
       </div>
 
       <hr>
@@ -113,9 +100,18 @@
       }
     });
 
-    function charge() {
-
-    }
+    $('button').onclick(function () {
+      var arr=$('.td');
+      $.each(arr,function(index,bill) {
+        var charge=bill.children()[2];
+        $.ajax({
+          url: ("http://api.reimaginebanking.com:80/accounts/"+accountid+"/transactions?key=CUSTa55383bcc13316a92ddf6a123dd4b446"),
+          success: function(results) {
+            $('button').remove();
+          }
+        });
+      });
+    });
     </script>
   </body>
 </html>
