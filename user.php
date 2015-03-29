@@ -105,19 +105,17 @@
       $.each(arr,function(index,bill) {
         var charge=bill.children()[2];
         $.ajax({
-          url: ("http://api.reimaginebanking.com:80/accounts/"+accountid+"/transactions?key=CUSTa55383bcc13316a92ddf6a123dd4b446",
-          {
+          url: ("http://api.reimaginebanking.com:80/accounts/"+accountid+"/transactions?key=CUSTa55383bcc13316a92ddf6a123dd4b446"),
+          data: {
             "transaction type": "cash",
             "payee id": "5516c07ba520e0066c9ac550",
             "amount": 1
-          }),
+          },
           success: function(results) {
             console.log(results);
           }
         });
-        bill.detach();
       });
-      this.detach();
     });
     </script>
   </body>
