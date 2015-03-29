@@ -100,7 +100,7 @@
       }
     });
 
-    $('.btn').on('click',function () {
+    $('.btn').on('click',function (e) {
       var arr=$('.td');
       $.each(arr,function(index,bill) {
         var charge=bill.children()[2];
