@@ -1,0 +1,23 @@
+{
+  "name": "HackPSU-Spring-2015",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tcyrus-hackathon/HackPSU-Spring-2015",
+  "authors": [
+    "TCYRUS <tcyrus@users.noreply.github.com>"
+  ],
+  "description": "Our Project for HackPSU Spring 2015",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "bootstrap-datepicker": "~1.4.0"
+  }
+}

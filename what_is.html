@@ -1,5 +1,9 @@
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
@@ -7,7 +11,7 @@
     <title>HACKPSU Microfinance</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <style>
@@ -26,7 +30,6 @@
   </head>
 
   <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -36,82 +39,64 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Home</a>
+          <a class="navbar-brand" href="index.html">HACKPSU Microfinance</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" action="user.php" method="post">
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul id="logged-in" class="nav navbar-nav navbar-right hidden">
+            <li>
+              <p class="navbar-text">Logged In</p>
+            </li>
+            <li>
+              <button id="logout" type="button" class="btn btn-danger navbar-btn">Logout</button>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right" action="user.html" method="post">
             <div class="form-group">
-              <input type="text" placeholder="Account Num" name="account" class="form-control">
+              <input type="text" placeholder="Account Num" name="account" class="form-control" required>
               <!-- 5516c07ba520e0066c9ac54e -->
             </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success">Login</button>
           </form>
-        </div><!--/.navbar-collapse -->
+        </div>
+        <!--/.navbar-collapse -->
       </div>
     </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-	<!--<img src="TH09_OPED_PIC_KENYA_3540f.jpg" class="img-responsive center-block" width="25%" height="25%" />-->
       <div class="container">
         <h1 align="center">What Is Project Plutus?</h1>
-        <!--<p align="center">You are now ready to go start building communities around the world! </p>
-       <!-- <p align="center"><a class="btn btn-primary btn-lg" href="building com.html" role="button">Build Communities Now &raquo;</a></p>-->
       </div>
     </div>
 
-    <!--<div class="container">
-      <!-- Example row of columns -->
-	  <!--<h1 align="center"> $231,528 raised in the fight against poverty</h1>
-	  
-	  <h2 align="center">Rethinking How We Give </h2> 
+    <div class="container">
       <div class="row">
-        <div class="col-md-4">
-         <h2>Who We Help </h2>
-          <p>Project Plutus helps people in developing countries through micro-financing. In many places around the world a micro loan of just a few dollars can create a fruit stand or buy a cow to produce valuable milk, but people don’t have access to these invaluable loans.The problem is that many micro-financing non-profit organizations struggle to fulfill the demand for these loans. Project Plutus supports these organizations fight against poverty.
---> <p align="center">According to Greek legend, Plutus is the god of wealth. In agrarian Greece he was at first associated purely with bounty of rich harvests. Later he came to represent wealth in more general terms. He was believed come to poverty stricken societies and revive them economically. Project Ploutos is an initiative which creates a direct link between individuals and non-profit microfinancing organizations, so people can donate their spare change to help empower poverty stricken societies just like Plutus</p>
-	<p align="center">We were founded in 2015 by a group of students who were driven to bring non-profit organizations and individuals closer together through technological advances. </p>
-	</p>
-         <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
-       <!-- </div>
-        <div class="col-md-4">
-          <h2>What Is Project Plutus?</h2>
-          <p>Project Plutus helps people in developing countries through micro-financing. Through Project Plutus your registered credit card purchases will be rounded to the nearest dollar, and the extra few cents will be donated to microfinancing non profits around the world. 
-</p>
-<p>Sign- up for Project Plutus by clicking the “Build Communities Now” button at the top of the page. You can opt in or out of Project Plutus at any time. 
-</p>
+        <div class="col-md-6 col-md-offset-3">
+          <p align="center">
+            According to Greek legend, Plutus is the god of wealth. In Agrarian Greece he was at first associated purely with bounty of rich harvests. Later he came to represent wealth in more general terms. He was believed come to poverty stricken societies and revive them economically. Project Plutus is an initiative which creates a direct link between individuals and non-profit microfinancing organizations, so people can donate their spare change to help empower poverty stricken societies just like Plutus
+          </p>
+	         <p align="center">
+             We were founded in 2015 by a group of students who were driven to bring non-profit organizations and individuals closer together through technological advances.
+           </p>
+         </div>
+       </div>
 
-          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
-       <!--</div>
-        <div class="col-md-4">
-          <h2>Real Life Changes</h2>
-          <p>Kiva, one of the many microfinancing companies sponsored through Project Plutus, has provided Viktoria from Kenya. a  loan of $275 to buy a dairy cow, which will increase the amount of milk supply for her and her neighbors.
-</p>
-<p>Micro loans encourage the creation of businesses and increase education rates in developing countries all over the world. Your help liberates families from poverty all over the world.</p>
-          <p>Since they were founded in 2005 they have:</p>
-		    <ul>
-            <li>Had over 1 million lenders</li>
-            <li>Over $600,000 in loans</li>
-            <li>Built a presence in over 80 countries</li>
-          </ul>
-		      <p><a class="btn btn-default" href="http://www.kiva.org/home" role="button">Find out more about Kiva &raquo;</a></p>
-        </div>
-      </div>
+       <hr>
 
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
+       <footer>
+         <p>&copy; Company 2014</p>
+       </footer>
     </div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="ie10-viewport-bug-workaround.js"></script>
+
+    <script src="login.js"></script>
   </body>
 </html>
